@@ -1,0 +1,1 @@
+srun --nodes=1 --time=01:00:00 -p gpu --pty /bin/bash
