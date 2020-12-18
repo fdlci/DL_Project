@@ -15,7 +15,7 @@ model = torch.hub.load('pytorch/vision:v0.6.0', 'vgg16', pretrained=True)
 model.eval()
 
 def defining_model_to_train():
-
+    
     feature_extract = True
     num_classes = 11
 
@@ -48,15 +48,15 @@ def defining_model_to_train():
     # Decay LR by a factor of 0.1 every 7 epochs
     exp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=7, gamma=0.1)
 
-    dataloaders = defining_data()
+    dataloaders = defining_data()[0]
 
     model_ft = train_model(model_ft, dataloaders, criterion, optimizer_ft, exp_lr_scheduler)
 
     dataloaders_test = predict()
 
-    return dataloaders_test
+    return dataloaders_test, model_ft
 
-dataloaders_test = defining_model_to_train()
+dataloaders_test, model_ft = defining_model_to_train()
 
 for inputs, labels in dataloaders_test['Test Tiny']:
     inputs = inputs.to(device)
@@ -68,4 +68,4 @@ for inputs, labels in dataloaders_test['Test Tiny']:
     #print(preds)
     print(preds == labels)
 
-torch.save(model_ft.state_dict(),"state_dict_model_VGG16.pt")
+torch.save(model_ft.state_dict(),"VGG16.pt")

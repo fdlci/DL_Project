@@ -37,7 +37,7 @@ def defining_data():
 
     # device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
-    return dataloaders
+    return dataloaders, image_datasets
 
 # def imshow(inp, title=None):
 #     """Imshow for Tensor."""
@@ -61,7 +61,16 @@ def defining_data():
 # imshow(out, title=[class_names[x] for x in classes])
 
 
-def train_model(model, dataloaders, criterion, optimizer, scheduler, num_epochs=25):
+def train_model(model, dataloaders, criterion, optimizer, scheduler, num_epochs=50):
+
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    # print(device)
+
+    image_datasets = defining_data()[1]
+
+    dataset_sizes = {x: len(image_datasets[x]) for x in ['Training Tiny', 'Val Tiny']}
+    class_names = image_datasets['Training Tiny'].classes
+
     since = time.time()
 
     best_model_wts = copy.deepcopy(model.state_dict())
@@ -137,7 +146,7 @@ def train_model(model, dataloaders, criterion, optimizer, scheduler, num_epochs=
     plt.figure()
     plt.plot(training_loss, 'b', label='Training Loss')
     plt.plot(validation_loss, 'r', label='Validation Loss')
-    plt.title('Variations of the training and validation loss')
+    plt.title('VGG16: Variations of the training and validation loss')
     plt.show()
     plt.savefig('VGG16.png')
 

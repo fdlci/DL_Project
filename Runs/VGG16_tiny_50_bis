@@ -1,0 +1,217 @@
+cuda:0
+Paramaters to learn:
+	 classifier.6.weight
+	 classifier.6.bias
+Epoch 0/49
+----------
+Using cache found in /gpfs/users/florezdi/.cache/torch/hub/pytorch_vision_v0.6.0
+Training Tiny Loss: 1.8109 Acc: 0.3924
+Val Tiny Loss: 1.3966 Acc: 0.5783
+Epoch 1/49
+----------
+Training Tiny Loss: 1.3225 Acc: 0.6076
+Val Tiny Loss: 1.2416 Acc: 0.6988
+Epoch 2/49
+----------
+Training Tiny Loss: 1.0875 Acc: 0.6867
+Val Tiny Loss: 1.2607 Acc: 0.6988
+Epoch 3/49
+----------
+Training Tiny Loss: 1.0037 Acc: 0.7500
+Val Tiny Loss: 1.0534 Acc: 0.7470
+Epoch 4/49
+----------
+Training Tiny Loss: 0.7677 Acc: 0.7563
+Val Tiny Loss: 1.0427 Acc: 0.7470
+Epoch 5/49
+----------
+Training Tiny Loss: 0.7982 Acc: 0.7658
+Val Tiny Loss: 0.9451 Acc: 0.6988
+Epoch 6/49
+----------
+Training Tiny Loss: 0.6912 Acc: 0.7975
+Val Tiny Loss: 1.1928 Acc: 0.7349
+Epoch 7/49
+----------
+Training Tiny Loss: 0.6470 Acc: 0.7943
+Val Tiny Loss: 1.0826 Acc: 0.7711
+Epoch 8/49
+----------
+Training Tiny Loss: 0.5306 Acc: 0.8228
+Val Tiny Loss: 1.0624 Acc: 0.7470
+Epoch 9/49
+----------
+Training Tiny Loss: 0.5229 Acc: 0.8386
+Val Tiny Loss: 1.0187 Acc: 0.7590
+Epoch 10/49
+----------
+Training Tiny Loss: 0.5245 Acc: 0.8418
+Val Tiny Loss: 1.0003 Acc: 0.7711
+Epoch 11/49
+----------
+Training Tiny Loss: 0.5378 Acc: 0.8513
+Val Tiny Loss: 0.9774 Acc: 0.7831
+Epoch 12/49
+----------
+Training Tiny Loss: 0.4506 Acc: 0.8639
+Val Tiny Loss: 0.9472 Acc: 0.7711
+Epoch 13/49
+----------
+Training Tiny Loss: 0.5025 Acc: 0.8671
+Val Tiny Loss: 0.9310 Acc: 0.7711
+Epoch 14/49
+----------
+Training Tiny Loss: 0.5341 Acc: 0.8196
+Val Tiny Loss: 0.9297 Acc: 0.7711
+Epoch 15/49
+----------
+Training Tiny Loss: 0.4751 Acc: 0.8576
+Val Tiny Loss: 0.9273 Acc: 0.7711
+Epoch 16/49
+----------
+Training Tiny Loss: 0.4939 Acc: 0.8481
+Val Tiny Loss: 0.9228 Acc: 0.7711
+Epoch 17/49
+----------
+Training Tiny Loss: 0.5034 Acc: 0.8418
+Val Tiny Loss: 0.9209 Acc: 0.7711
+Epoch 18/49
+----------
+Training Tiny Loss: 0.5195 Acc: 0.8165
+Val Tiny Loss: 0.9211 Acc: 0.7711
+Epoch 19/49
+----------
+Training Tiny Loss: 0.5474 Acc: 0.8323
+Val Tiny Loss: 0.9225 Acc: 0.7711
+Epoch 20/49
+----------
+Training Tiny Loss: 0.5189 Acc: 0.8449
+Val Tiny Loss: 0.9206 Acc: 0.7711
+Epoch 21/49
+----------
+Training Tiny Loss: 0.4400 Acc: 0.8386
+Val Tiny Loss: 0.9205 Acc: 0.7711
+Epoch 22/49
+----------
+Training Tiny Loss: 0.4534 Acc: 0.8703
+Val Tiny Loss: 0.9201 Acc: 0.7711
+Epoch 23/49
+----------
+Training Tiny Loss: 0.5272 Acc: 0.8386
+Val Tiny Loss: 0.9197 Acc: 0.7711
+Epoch 24/49
+----------
+Training Tiny Loss: 0.4830 Acc: 0.8576
+Val Tiny Loss: 0.9196 Acc: 0.7711
+Epoch 25/49
+----------
+Training Tiny Loss: 0.5091 Acc: 0.8291
+Val Tiny Loss: 0.9192 Acc: 0.7711
+Epoch 26/49
+----------
+Training Tiny Loss: 0.4397 Acc: 0.8576
+Val Tiny Loss: 0.9188 Acc: 0.7711
+Epoch 27/49
+----------
+Training Tiny Loss: 0.5163 Acc: 0.8418
+Val Tiny Loss: 0.9188 Acc: 0.7711
+Epoch 28/49
+----------
+Training Tiny Loss: 0.5951 Acc: 0.8259
+Val Tiny Loss: 0.9187 Acc: 0.7711
+Epoch 29/49
+----------
+Training Tiny Loss: 0.4625 Acc: 0.8576
+Val Tiny Loss: 0.9187 Acc: 0.7711
+Epoch 30/49
+----------
+Training Tiny Loss: 0.5607 Acc: 0.8386
+Val Tiny Loss: 0.9187 Acc: 0.7711
+Epoch 31/49
+----------
+Training Tiny Loss: 0.5588 Acc: 0.8386
+Val Tiny Loss: 0.9187 Acc: 0.7711
+Epoch 32/49
+----------
+Training Tiny Loss: 0.4763 Acc: 0.8481
+Val Tiny Loss: 0.9186 Acc: 0.7711
+Epoch 33/49
+----------
+Training Tiny Loss: 0.4674 Acc: 0.8544
+Val Tiny Loss: 0.9186 Acc: 0.7711
+Epoch 34/49
+----------
+Training Tiny Loss: 0.5211 Acc: 0.8259
+Val Tiny Loss: 0.9186 Acc: 0.7711
+Epoch 35/49
+----------
+Training Tiny Loss: 0.4494 Acc: 0.8513
+Val Tiny Loss: 0.9186 Acc: 0.7711
+Epoch 36/49
+----------
+Training Tiny Loss: 0.5476 Acc: 0.8259
+Val Tiny Loss: 0.9186 Acc: 0.7711
+Epoch 37/49
+----------
+Training Tiny Loss: 0.5081 Acc: 0.8038
+Val Tiny Loss: 0.9186 Acc: 0.7711
+Epoch 38/49
+----------
+Training Tiny Loss: 0.5857 Acc: 0.8291
+Val Tiny Loss: 0.9186 Acc: 0.7711
+Epoch 39/49
+----------
+Training Tiny Loss: 0.3843 Acc: 0.8734
+Val Tiny Loss: 0.9186 Acc: 0.7711
+Epoch 40/49
+----------
+Training Tiny Loss: 0.5970 Acc: 0.8259
+Val Tiny Loss: 0.9186 Acc: 0.7711
+Epoch 41/49
+----------
+Training Tiny Loss: 0.5267 Acc: 0.8323
+Val Tiny Loss: 0.9186 Acc: 0.7711
+Epoch 42/49
+----------
+Training Tiny Loss: 0.5807 Acc: 0.8133
+Val Tiny Loss: 0.9186 Acc: 0.7711
+Epoch 43/49
+----------
+Training Tiny Loss: 0.5738 Acc: 0.8133
+Val Tiny Loss: 0.9186 Acc: 0.7711
+Epoch 44/49
+----------
+Training Tiny Loss: 0.5307 Acc: 0.8196
+Val Tiny Loss: 0.9186 Acc: 0.7711
+Epoch 45/49
+----------
+Training Tiny Loss: 0.4552 Acc: 0.8481
+Val Tiny Loss: 0.9186 Acc: 0.7711
+Epoch 46/49
+----------
+Training Tiny Loss: 0.5440 Acc: 0.8449
+Val Tiny Loss: 0.9186 Acc: 0.7711
+Epoch 47/49
+----------
+Training Tiny Loss: 0.4692 Acc: 0.8481
+Val Tiny Loss: 0.9186 Acc: 0.7711
+Epoch 48/49
+----------
+Training Tiny Loss: 0.4274 Acc: 0.8829
+Val Tiny Loss: 0.9186 Acc: 0.7711
+Epoch 49/49
+----------
+Training Tiny Loss: 0.6039 Acc: 0.8133
+Val Tiny Loss: 0.9186 Acc: 0.7711
+validation loss: [1.3966275047825043, 1.241615498640451, 1.2607316247310982, 1.0534222108053874, 1.0427129607961838, 0.9450762692883791, 1.1927673511476402, 1.082584155431713, 1.062441355683448, 1.0186875643859428, 1.0003474459321384, 0.9773642029388842, 0.9471890473940286, 0.9309905211789062, 0.929653215300606, 0.9272538327937385, 0.9227547773036612, 0.920896948640605, 0.9210743121466184, 0.9225469815084734, 0.9205675864794168, 0.9204762176980814, 0.9200831901237189, 0.9197004164557859, 0.9195706953844393, 0.9191877411072513, 0.9187916535884142, 0.9187530236296266, 0.9187305921980415, 0.9187326174543564, 0.9187103493745068, 0.9186544694814337, 0.9186318473643568, 0.918635890605938, 0.918628692357655, 0.9186256005462393, 0.9186268958251879, 0.9186299300965775, 0.9186252031520189, 0.9186248039624777, 0.9186244167118187, 0.918624517923019, 0.9186244094407702, 0.9186246055795486, 0.9186245785599731, 0.9186245280567624, 0.9186243093516453, 0.9186242097113506, 0.9186240966959172, 0.9186241209327456]
+Training complete in 3m 11s
+tensor([ True,  True,  True,  True,  True,  True,  True, False,  True,  True,
+        False], device='cuda:0')
+tensor([ True,  True,  True,  True,  True,  True,  True,  True,  True,  True,
+        False], device='cuda:0')
+tensor([False, False,  True, False,  True,  True, False, False,  True,  True,
+         True], device='cuda:0')
+
+real	3m39.352s
+user	10m40.782s
+sys	1m1.502s
