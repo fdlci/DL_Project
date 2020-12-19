@@ -156,24 +156,3 @@ def set_parameter_requires_grad(model, feature_extracting):
     if feature_extracting:
         for param in model.parameters():
             param.requires_grad = False
-
-def predict():
-    data_transforms = {'Test Tiny': transforms.Compose([
-        transforms.Resize(256),
-        transforms.CenterCrop(224),
-        transforms.ToTensor(),
-        transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
-        ]),
-    }
-
-    data_dir = 'Paris'
-
-    image_datasets = {x: datasets.ImageFolder(os.path.join(data_dir, x),
-                                            data_transforms[x])
-                    for x in ['Test Tiny']}
-    dataloaders_test = {x: torch.utils.data.DataLoader(image_datasets[x], batch_size=11,
-                                                shuffle=True, num_workers=4)
-                for x in ['Test Tiny']}
-
-    return dataloaders_test
-
