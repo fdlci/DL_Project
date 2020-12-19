@@ -8,29 +8,30 @@ from torch.optim import lr_scheduler
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 print(device)
 
-# Download the model from Pytorch
-model = torch.hub.load('pytorch/vision:v0.6.0', 'vgg16', pretrained=True)
-# model = torch.hub.load('pytorch/vision:v0.6.0', 'vgg16', pretrained=True)
-# model = torch.hub.load('pytorch/vision:v0.6.0', 'vgg16_bn', pretrained=True)
+model = torch.hub.load('pytorch/vision:v0.6.0', 'resnet101', pretrained=True)
+# or any of these variants
+# model = torch.hub.load('pytorch/vision:v0.6.0', 'resnet34', pretrained=True)
+# model = torch.hub.load('pytorch/vision:v0.6.0', 'resnet50', pretrained=True)
+# model = torch.hub.load('pytorch/vision:v0.6.0', 'resnet101', pretrained=True)
+# model = torch.hub.load('pytorch/vision:v0.6.0', 'resnet152', pretrained=True)
 model.eval()
 
 def defining_model_to_train():
-    
+
     feature_extract = True
     num_classes = 11
 
-    model_ft = models.vgg16(pretrained=True)
+    model_ft = models.resnet101(pretrained=True)
     set_parameter_requires_grad(model_ft, feature_extract)
-    num_ftrs = model_ft.classifier[6].in_features
-    model_ft.classifier[6] = nn.Linear(num_ftrs,num_classes)
-
+    num_ftrs = model_ft.fc.in_features
+    model_ft.fc = nn.Linear(num_ftrs, num_classes)
 
     model_ft = model_ft.to(device)
 
     criterion = nn.CrossEntropyLoss()
 
     params_to_update = model_ft.parameters()
-    print("Paramaters to learn:")
+    print("Params to learn:")
     if feature_extract:
         params_to_update = []
         for name,param in model_ft.named_parameters():
@@ -56,4 +57,4 @@ def defining_model_to_train():
 
 model_ft = defining_model_to_train()
 
-torch.save(model_ft.state_dict(),"VGG16_50.pt")
+torch.save(model_ft.state_dict(),"ResNet101.pt")

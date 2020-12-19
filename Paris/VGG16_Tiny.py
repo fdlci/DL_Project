@@ -1,4 +1,4 @@
-from Main import *
+from Main_tiny import *
 import torchvision
 from torchvision import models
 import torch.nn as nn

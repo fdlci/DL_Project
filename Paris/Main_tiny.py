@@ -11,13 +11,13 @@ plt.ion()
 
 def defining_data():
     data_transforms = {
-        'Training Set': transforms.Compose([
+        'Training Tiny': transforms.Compose([
             transforms.RandomResizedCrop(224),
             transforms.RandomHorizontalFlip(),
             transforms.ToTensor(),
             transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
         ]),
-        'Validation Set': transforms.Compose([
+        'Val Tiny': transforms.Compose([
             transforms.Resize(256),
             transforms.CenterCrop(224),
             transforms.ToTensor(),
@@ -28,10 +28,10 @@ def defining_data():
     data_dir = 'Paris'
     image_datasets = {x: datasets.ImageFolder(os.path.join(data_dir, x),
                                             data_transforms[x])
-                    for x in ['Training Set', 'Validation Set']}
+                    for x in ['Training Tiny', 'Val Tiny']}
     dataloaders = {x: torch.utils.data.DataLoader(image_datasets[x], batch_size=4,
                                                 shuffle=True, num_workers=4)
-                for x in ['Training Set', 'Validation Set']}
+                for x in ['Training Tiny', 'Val Tiny']}
     # dataset_sizes = {x: len(image_datasets[x]) for x in ['Training Tiny', 'Val Tiny']}
     # class_names = image_datasets['Training Tiny'].classes
 
@@ -68,8 +68,8 @@ def train_model(model, dataloaders, criterion, optimizer, scheduler, num_epochs=
 
     image_datasets = defining_data()[1]
 
-    dataset_sizes = {x: len(image_datasets[x]) for x in ['Training Set', 'Validation Set']}
-    class_names = image_datasets['Training Set'].classes
+    dataset_sizes = {x: len(image_datasets[x]) for x in ['Training Tiny', 'Val Tiny']}
+    class_names = image_datasets['Training Tiny'].classes
 
     since = time.time()
 
@@ -83,8 +83,8 @@ def train_model(model, dataloaders, criterion, optimizer, scheduler, num_epochs=
         print('-' * 10)
 
         # Each epoch has a training and validation phase
-        for phase in ['Training Set', 'Validation Set']:
-            if phase == 'Training Set':
+        for phase in ['Training Tiny', 'Val Tiny']:
+            if phase == 'Training Tiny':
                 model.train()  # Set model to training mode
             else:
                 model.eval()   # Set model to evaluate mode
@@ -102,25 +102,25 @@ def train_model(model, dataloaders, criterion, optimizer, scheduler, num_epochs=
 
                 # forward
                 # track history if only in train
-                with torch.set_grad_enabled(phase == 'Training Set'): #sets gradient calculations to on or off
+                with torch.set_grad_enabled(phase == 'Training Tiny'): #sets gradient calculations to on or off
                     outputs = model(inputs)
                     _, preds = torch.max(outputs, 1)
                     loss = criterion(outputs, labels)
                     # training_loss.append(loss)
 
                     # backward + optimize only if in training phase
-                    if phase == 'Training Set':
+                    if phase == 'Training Tiny':
                         loss.backward()
                         optimizer.step()
 
                 # statistics
                 running_loss += loss.item() * inputs.size(0)
                 running_corrects += torch.sum(preds == labels.data)
-            if phase == 'Training Set':
+            if phase == 'Training Tiny':
                 scheduler.step()
             epoch_loss = running_loss / dataset_sizes[phase]
             epoch_acc = running_corrects.double() / dataset_sizes[phase]
-            if phase == 'Training Set':
+            if phase == 'Training Tiny':
                 training_loss.append(epoch_loss)
             else:
                 validation_loss.append(epoch_loss)
@@ -129,7 +129,7 @@ def train_model(model, dataloaders, criterion, optimizer, scheduler, num_epochs=
                 phase, epoch_loss, epoch_acc))
 
             # deep copy the model
-            if phase == 'Validation Set' and epoch_acc > best_acc:
+            if phase == 'Val Tiny' and epoch_acc > best_acc:
                 best_acc = epoch_acc
                 best_model_wts = copy.deepcopy(model.state_dict())
 
