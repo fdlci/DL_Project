@@ -5,18 +5,36 @@ import numpy as np
 import os
 
 def loading_saved_model():
-    model_ft = torch.hub.load('pytorch/vision:v0.6.0', 'vgg16', pretrained=True)
-    model_ft.eval()
-    num_ftrs = model_ft.classifier[6].in_features
-    model_ft.classifier[6] = nn.Linear(num_ftrs,11)
+    # model_ft = torch.hub.load('pytorch/vision:v0.6.0', 'vgg16', pretrained=True)
+    # model_ft.eval()
+    # num_ftrs = model_ft.classifier[6].in_features
+    # model_ft.classifier[6] = nn.Linear(num_ftrs,11)
 
-    model_ft.load_state_dict(torch.load('Models/VGG16_tiny_50.pt', map_location='cpu'))
+    # model_ft.load_state_dict(torch.load('VGG16_50.pt', map_location='cpu'))
+    # model_ft.eval()
+
+    # model_ft = torch.hub.load('pytorch/vision:v0.6.0', 'alexnet', pretrained=True)
+    # model_ft.eval()
+
+    # num_ftrs = model_ft.classifier[6].in_features
+    # model_ft.classifier[6] = nn.Linear(num_ftrs,11)
+
+    # model_ft.load_state_dict(torch.load('AlexNet.pt', map_location='cpu'))
+    # model_ft.eval()   
+
+    model_ft = torch.hub.load('pytorch/vision:v0.6.0', 'resnet101', pretrained=True)
     model_ft.eval()
+    num_ftrs = model_ft.fc.in_features
+    model_ft.fc = nn.Linear(num_ftrs, 11)
+
+    model_ft.load_state_dict(torch.load('ResNet101.pt', map_location='cpu'))
+    model_ft.eval() 
+
     return model_ft
 
 def getting_the_test_data():
 
-    data_transforms = {'Test Tiny': transforms.Compose([
+    data_transforms = {'Test Set': transforms.Compose([
             transforms.Resize(256),
             transforms.CenterCrop(224),
             transforms.ToTensor(),
@@ -28,20 +46,20 @@ def getting_the_test_data():
 
     image_datasets = {x: datasets.ImageFolder(os.path.join(data_dir, x),
                                             data_transforms[x])
-                    for x in ['Test Tiny']}
+                    for x in ['Test Set']}
     dataloaders_test = {x: torch.utils.data.DataLoader(image_datasets[x], batch_size=11,
                                                 shuffle=True, num_workers=4)
-                for x in ['Test Tiny']}
-    dataset_sizes = {x: len(image_datasets[x]) for x in ['Test Tiny']}
-    class_names = image_datasets['Test Tiny'].classes
+                for x in ['Test Set']}
+    dataset_sizes = {x: len(image_datasets[x]) for x in ['Test Set']}
+    class_names = image_datasets['Test Set'].classes
 
-    Total_size = dataset_sizes['Test Tiny']
+    Total_size = dataset_sizes['Test Set']
     return dataloaders_test, class_names, Total_size
 
 def getting_predictions(dataloaders_test, model_ft):
     inputs_list = []
     labels_list = []
-    for inputs, labels in dataloaders_test['Test Tiny']:
+    for inputs, labels in dataloaders_test['Test Set']:
         labels_list += labels.tolist()
         outputs = model_ft(inputs)
         _, preds = torch.max(outputs, 1)
