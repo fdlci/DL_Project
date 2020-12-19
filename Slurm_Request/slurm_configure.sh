@@ -16,7 +16,7 @@ module load anaconda3/2020.02/gcc-9.2.0
 module load cuda/10.2.89/intel-19.0.3.199
 
 # Create conda environment
-conda env create -f /gpfs/users/florezdi/.config/environment.yml --force
+conda env create -f /gpfs/users/florezdi/.config/environment_1.yml --force
 
 # Save environment description
 #source activate cifar10

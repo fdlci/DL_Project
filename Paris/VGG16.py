@@ -51,3 +51,9 @@ def defining_model_to_train():
     dataloaders = defining_data()[0]
 
     model_ft = train_model(model_ft, dataloaders, criterion, optimizer_ft, exp_lr_scheduler)
+    
+    return model_ft
+
+model_ft = defining_model_to_train()
+
+torch.save(model_ft.state_dict(),"VGG16_tiny_50.pt")

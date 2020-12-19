@@ -1,0 +1,111 @@
+cuda:0
+Paramaters to learn:
+	 classifier.6.weight
+	 classifier.6.bias
+Epoch 0/24
+----------
+Using cache found in /gpfs/users/florezdi/.cache/torch/hub/pytorch_vision_v0.6.0
+Training Tiny Loss: 1.8355 Acc: 0.4177
+Val Tiny Loss: 1.3778 Acc: 0.6506
+Epoch 1/24
+----------
+Training Tiny Loss: 1.2981 Acc: 0.6171
+Val Tiny Loss: 1.4279 Acc: 0.6627
+Epoch 2/24
+----------
+Training Tiny Loss: 1.0280 Acc: 0.6772
+Val Tiny Loss: 1.2614 Acc: 0.7349
+Epoch 3/24
+----------
+Training Tiny Loss: 0.9996 Acc: 0.7089
+Val Tiny Loss: 1.2603 Acc: 0.6747
+Epoch 4/24
+----------
+Training Tiny Loss: 0.9442 Acc: 0.7247
+Val Tiny Loss: 0.9797 Acc: 0.7229
+Epoch 5/24
+----------
+Training Tiny Loss: 0.9158 Acc: 0.7405
+Val Tiny Loss: 1.0020 Acc: 0.7590
+Epoch 6/24
+----------
+Training Tiny Loss: 0.6458 Acc: 0.8101
+Val Tiny Loss: 1.0612 Acc: 0.7349
+Epoch 7/24
+----------
+Training Tiny Loss: 0.6609 Acc: 0.8070
+Val Tiny Loss: 0.9721 Acc: 0.7952
+Epoch 8/24
+----------
+Training Tiny Loss: 0.5252 Acc: 0.8513
+Val Tiny Loss: 0.9622 Acc: 0.8072
+Epoch 9/24
+----------
+Training Tiny Loss: 0.5314 Acc: 0.8544
+Val Tiny Loss: 0.8867 Acc: 0.7952
+Epoch 10/24
+----------
+Training Tiny Loss: 0.5385 Acc: 0.8323
+Val Tiny Loss: 0.8751 Acc: 0.8072
+Epoch 11/24
+----------
+Training Tiny Loss: 0.4392 Acc: 0.8703
+Val Tiny Loss: 0.8512 Acc: 0.8072
+Epoch 12/24
+----------
+Training Tiny Loss: 0.4880 Acc: 0.8323
+Val Tiny Loss: 0.8752 Acc: 0.8193
+Epoch 13/24
+----------
+Training Tiny Loss: 0.5719 Acc: 0.8165
+Val Tiny Loss: 0.8619 Acc: 0.8193
+Epoch 14/24
+----------
+Training Tiny Loss: 0.5158 Acc: 0.8544
+Val Tiny Loss: 0.8546 Acc: 0.8193
+Epoch 15/24
+----------
+Training Tiny Loss: 0.5210 Acc: 0.8544
+Val Tiny Loss: 0.8548 Acc: 0.8193
+Epoch 16/24
+----------
+Training Tiny Loss: 0.4845 Acc: 0.8481
+Val Tiny Loss: 0.8506 Acc: 0.8193
+Epoch 17/24
+----------
+Training Tiny Loss: 0.5251 Acc: 0.8418
+Val Tiny Loss: 0.8476 Acc: 0.8193
+Epoch 18/24
+----------
+Training Tiny Loss: 0.4887 Acc: 0.8608
+Val Tiny Loss: 0.8421 Acc: 0.8193
+Epoch 19/24
+----------
+Training Tiny Loss: 0.4908 Acc: 0.8576
+Val Tiny Loss: 0.8427 Acc: 0.8193
+Epoch 20/24
+----------
+Training Tiny Loss: 0.5205 Acc: 0.8544
+Val Tiny Loss: 0.8357 Acc: 0.8193
+Epoch 21/24
+----------
+Training Tiny Loss: 0.5465 Acc: 0.8259
+Val Tiny Loss: 0.8359 Acc: 0.8193
+Epoch 22/24
+----------
+Training Tiny Loss: 0.5959 Acc: 0.8323
+Val Tiny Loss: 0.8359 Acc: 0.8193
+Epoch 23/24
+----------
+Training Tiny Loss: 0.4250 Acc: 0.8703
+Val Tiny Loss: 0.8354 Acc: 0.8193
+Epoch 24/24
+----------
+Training Tiny Loss: 0.6034 Acc: 0.8228
+Val Tiny Loss: 0.8348 Acc: 0.8193
+validation loss: [1.3777888374156262, 1.4279105871556752, 1.2613968156188367, 1.2603167008204632, 0.9796607825142073, 1.0019884016140397, 1.0611940260123776, 0.9721009418906936, 0.9622292443212256, 0.8866587458515024, 0.8750621939010649, 0.8511838052107628, 0.8752332478761673, 0.8619080110486731, 0.8545954520982432, 0.8547623563692512, 0.8506199759711702, 0.847628988729543, 0.8420525431094399, 0.8426974107208381, 0.8356880662311991, 0.8359207964378846, 0.8358679306973894, 0.8353952343957162, 0.8348295811608614]
+Training complete in 1m 36s
+
+real	1m59.044s
+user	5m23.728s
+sys	0m33.141s

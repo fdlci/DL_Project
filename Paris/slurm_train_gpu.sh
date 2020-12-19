@@ -13,7 +13,7 @@ module load cuda/10.2.89/intel-19.0.3.199
 [ ! -d output ] && mkdir output
 
 # Activate anaconda environment code
-source activate VGG16
+source activate GPUrun
 
 # Train the network
 time python Paris/VGG16.py -g # -g option enable the GPU accelaration
