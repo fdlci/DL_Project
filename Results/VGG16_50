@@ -1,0 +1,4 @@
+{'Defense_Test': 0.7368421052631579, 'Eiffel_Test': 0.6428571428571429, 'Invalides_Test': 0.6666666666666666, 
+'Louvre_Test': 0.8518518518518519, 'MoulinRouge_Test': 0.45454545454545453, 'MuséeOrsay_Test': 0.8082191780821918, 
+'NotreDame_Test': 0.6590909090909091, 'Pantheon_Test': 0.7424242424242424, 'Pompidou_Test': 0.7045454545454546, 
+'SacreCoeur_Test': 0.6578947368421053, 'Triomphe_Test': 0.875, 'Total': 0.7198364008179959}

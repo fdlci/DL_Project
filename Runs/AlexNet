@@ -1,0 +1,211 @@
+cuda:0
+Params to learn:
+	 classifier.6.weight
+	 classifier.6.bias
+Epoch 0/49
+----------
+Using cache found in /gpfs/users/florezdi/.cache/torch/hub/pytorch_vision_v0.6.0
+Training Set Loss: 2.8704 Acc: 0.5571
+Validation Set Loss: 3.2141 Acc: 0.5873
+Epoch 1/49
+----------
+Training Set Loss: 2.6125 Acc: 0.6474
+Validation Set Loss: 3.8973 Acc: 0.6283
+Epoch 2/49
+----------
+Training Set Loss: 2.2244 Acc: 0.6949
+Validation Set Loss: 3.9843 Acc: 0.6119
+Epoch 3/49
+----------
+Training Set Loss: 2.1806 Acc: 0.7161
+Validation Set Loss: 3.7196 Acc: 0.6468
+Epoch 4/49
+----------
+Training Set Loss: 2.1357 Acc: 0.7222
+Validation Set Loss: 4.3295 Acc: 0.6037
+Epoch 5/49
+----------
+Training Set Loss: 2.1204 Acc: 0.7345
+Validation Set Loss: 3.5577 Acc: 0.6653
+Epoch 6/49
+----------
+Training Set Loss: 2.0419 Acc: 0.7409
+Validation Set Loss: 3.4075 Acc: 0.6817
+Epoch 7/49
+----------
+Training Set Loss: 1.4763 Acc: 0.7843
+Validation Set Loss: 3.2503 Acc: 0.6940
+Epoch 8/49
+----------
+Training Set Loss: 1.2893 Acc: 0.7968
+Validation Set Loss: 3.1785 Acc: 0.6940
+Epoch 9/49
+----------
+Training Set Loss: 1.2218 Acc: 0.8070
+Validation Set Loss: 2.9795 Acc: 0.6982
+Epoch 10/49
+----------
+Training Set Loss: 1.0782 Acc: 0.8159
+Validation Set Loss: 2.8617 Acc: 0.7043
+Epoch 11/49
+----------
+Training Set Loss: 1.1015 Acc: 0.8131
+Validation Set Loss: 2.8310 Acc: 0.7105
+Epoch 12/49
+----------
+Training Set Loss: 1.0591 Acc: 0.8164
+Validation Set Loss: 2.8432 Acc: 0.7002
+Epoch 13/49
+----------
+Training Set Loss: 1.0243 Acc: 0.8164
+Validation Set Loss: 2.7728 Acc: 0.7064
+Epoch 14/49
+----------
+Training Set Loss: 1.0757 Acc: 0.8139
+Validation Set Loss: 2.7696 Acc: 0.7023
+Epoch 15/49
+----------
+Training Set Loss: 0.9117 Acc: 0.8287
+Validation Set Loss: 2.7662 Acc: 0.7023
+Epoch 16/49
+----------
+Training Set Loss: 0.9952 Acc: 0.8251
+Validation Set Loss: 2.7512 Acc: 0.7064
+Epoch 17/49
+----------
+Training Set Loss: 0.9575 Acc: 0.8274
+Validation Set Loss: 2.7382 Acc: 0.7084
+Epoch 18/49
+----------
+Training Set Loss: 0.8815 Acc: 0.8374
+Validation Set Loss: 2.7432 Acc: 0.7043
+Epoch 19/49
+----------
+Training Set Loss: 0.9040 Acc: 0.8312
+Validation Set Loss: 2.7422 Acc: 0.7023
+Epoch 20/49
+----------
+Training Set Loss: 0.9113 Acc: 0.8351
+Validation Set Loss: 2.7293 Acc: 0.7002
+Epoch 21/49
+----------
+Training Set Loss: 0.9159 Acc: 0.8297
+Validation Set Loss: 2.7291 Acc: 0.7002
+Epoch 22/49
+----------
+Training Set Loss: 0.8859 Acc: 0.8249
+Validation Set Loss: 2.7289 Acc: 0.7002
+Epoch 23/49
+----------
+Training Set Loss: 0.9171 Acc: 0.8302
+Validation Set Loss: 2.7292 Acc: 0.7002
+Epoch 24/49
+----------
+Training Set Loss: 0.9281 Acc: 0.8290
+Validation Set Loss: 2.7305 Acc: 0.7002
+Epoch 25/49
+----------
+Training Set Loss: 0.9838 Acc: 0.8254
+Validation Set Loss: 2.7284 Acc: 0.7043
+Epoch 26/49
+----------
+Training Set Loss: 0.9884 Acc: 0.8172
+Validation Set Loss: 2.7270 Acc: 0.7064
+Epoch 27/49
+----------
+Training Set Loss: 0.9753 Acc: 0.8251
+Validation Set Loss: 2.7270 Acc: 0.7043
+Epoch 28/49
+----------
+Training Set Loss: 0.9097 Acc: 0.8295
+Validation Set Loss: 2.7268 Acc: 0.7064
+Epoch 29/49
+----------
+Training Set Loss: 0.9123 Acc: 0.8318
+Validation Set Loss: 2.7269 Acc: 0.7043
+Epoch 30/49
+----------
+Training Set Loss: 0.9804 Acc: 0.8185
+Validation Set Loss: 2.7267 Acc: 0.7043
+Epoch 31/49
+----------
+Training Set Loss: 0.9529 Acc: 0.8274
+Validation Set Loss: 2.7266 Acc: 0.7043
+Epoch 32/49
+----------
+Training Set Loss: 0.9365 Acc: 0.8226
+Validation Set Loss: 2.7267 Acc: 0.7043
+Epoch 33/49
+----------
+Training Set Loss: 0.8712 Acc: 0.8279
+Validation Set Loss: 2.7266 Acc: 0.7043
+Epoch 34/49
+----------
+Training Set Loss: 0.9664 Acc: 0.8249
+Validation Set Loss: 2.7266 Acc: 0.7064
+Epoch 35/49
+----------
+Training Set Loss: 0.9539 Acc: 0.8279
+Validation Set Loss: 2.7266 Acc: 0.7064
+Epoch 36/49
+----------
+Training Set Loss: 0.9525 Acc: 0.8279
+Validation Set Loss: 2.7266 Acc: 0.7064
+Epoch 37/49
+----------
+Training Set Loss: 0.9258 Acc: 0.8315
+Validation Set Loss: 2.7266 Acc: 0.7064
+Epoch 38/49
+----------
+Training Set Loss: 0.9528 Acc: 0.8272
+Validation Set Loss: 2.7266 Acc: 0.7064
+Epoch 39/49
+----------
+Training Set Loss: 0.9728 Acc: 0.8238
+Validation Set Loss: 2.7266 Acc: 0.7064
+Epoch 40/49
+----------
+Training Set Loss: 0.9368 Acc: 0.8254
+Validation Set Loss: 2.7266 Acc: 0.7064
+Epoch 41/49
+----------
+Training Set Loss: 0.9300 Acc: 0.8356
+Validation Set Loss: 2.7266 Acc: 0.7064
+Epoch 42/49
+----------
+Training Set Loss: 0.8971 Acc: 0.8364
+Validation Set Loss: 2.7266 Acc: 0.7064
+Epoch 43/49
+----------
+Training Set Loss: 0.9633 Acc: 0.8226
+Validation Set Loss: 2.7266 Acc: 0.7064
+Epoch 44/49
+----------
+Training Set Loss: 1.0054 Acc: 0.8190
+Validation Set Loss: 2.7266 Acc: 0.7064
+Epoch 45/49
+----------
+Training Set Loss: 0.9480 Acc: 0.8312
+Validation Set Loss: 2.7266 Acc: 0.7064
+Epoch 46/49
+----------
+Training Set Loss: 0.9669 Acc: 0.8290
+Validation Set Loss: 2.7266 Acc: 0.7064
+Epoch 47/49
+----------
+Training Set Loss: 0.9382 Acc: 0.8300
+Validation Set Loss: 2.7266 Acc: 0.7064
+Epoch 48/49
+----------
+Training Set Loss: 0.9846 Acc: 0.8228
+Validation Set Loss: 2.7266 Acc: 0.7064
+Epoch 49/49
+----------
+Training Set Loss: 0.9193 Acc: 0.8279
+Validation Set Loss: 2.7266 Acc: 0.7064
+validation loss: [3.2140955220568532, 3.8972574154803508, 3.984313637554348, 3.719609405150686, 4.3294504108618685, 3.5577212925732287, 3.4075398137980497, 3.2503271274843137, 3.178542936947016, 2.979548120740803, 2.8617441146571054, 2.8310133505892243, 2.843229456639899, 2.7728180218117164, 2.7696103317789604, 2.766223341943434, 2.7512112250281002, 2.7381542663606577, 2.7431845394652097, 2.742249113758644, 2.729315791539012, 2.7290616105299215, 2.7288750145570138, 2.7292311160165332, 2.7305415058919738, 2.728367851304944, 2.7269519466321155, 2.7269695834273087, 2.726840130856771, 2.7269113708641983, 2.7267486658240645, 2.7266490828530756, 2.726654282863884, 2.726585313807999, 2.726580885399464, 2.726574455769398, 2.7265612439501457, 2.7265732843305224, 2.7265577559751213, 2.7265683859236756, 2.726564065961129, 2.7265608020580654, 2.7265561320126404, 2.7265586547852876, 2.7265565888931826, 2.726550396018351, 2.7265557418179904, 2.726559669128524, 2.7265621955097954, 2.726555841753745]
+Training complete in 32m 24s
+
+real	32m53.523s
+user	113m26.460s
+sys	4m17.653s
