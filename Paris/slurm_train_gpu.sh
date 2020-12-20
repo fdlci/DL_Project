@@ -16,4 +16,4 @@ module load cuda/10.2.89/intel-19.0.3.199
 source activate VGG16
 
 # Train the network
-time python Paris/ResNet101.py -g # -g option enable the GPU accelaration
+time python Paris/AlexNet.py -g # -g option enable the GPU accelaration
