@@ -17,7 +17,7 @@ model.eval()
 def defining_model_to_train():
     
     feature_extract = True
-    num_classes = 11
+    num_classes = 12
 
     model_ft = models.vgg16(pretrained=True)
     set_parameter_requires_grad(model_ft, feature_extract)

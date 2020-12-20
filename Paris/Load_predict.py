@@ -4,31 +4,33 @@ from torchvision import datasets, transforms
 import numpy as np
 import os
 
+num_classes = 12
+
 def loading_saved_model():
     # model_ft = torch.hub.load('pytorch/vision:v0.6.0', 'vgg16', pretrained=True)
     # model_ft.eval()
     # num_ftrs = model_ft.classifier[6].in_features
-    # model_ft.classifier[6] = nn.Linear(num_ftrs,11)
+    # model_ft.classifier[6] = nn.Linear(num_ftrs,num_classes)
 
-    # model_ft.load_state_dict(torch.load('VGG16_50.pt', map_location='cpu'))
+    # model_ft.load_state_dict(torch.load('Models/VGG16_50_Oxford.pt', map_location='cpu'))
     # model_ft.eval()
 
-    # model_ft = torch.hub.load('pytorch/vision:v0.6.0', 'alexnet', pretrained=True)
-    # model_ft.eval()
-
-    # num_ftrs = model_ft.classifier[6].in_features
-    # model_ft.classifier[6] = nn.Linear(num_ftrs,11)
-
-    # model_ft.load_state_dict(torch.load('AlexNet.pt', map_location='cpu'))
-    # model_ft.eval()   
-
-    model_ft = torch.hub.load('pytorch/vision:v0.6.0', 'resnet101', pretrained=True)
+    model_ft = torch.hub.load('pytorch/vision:v0.6.0', 'alexnet', pretrained=True)
     model_ft.eval()
-    num_ftrs = model_ft.fc.in_features
-    model_ft.fc = nn.Linear(num_ftrs, 11)
 
-    model_ft.load_state_dict(torch.load('ResNet101.pt', map_location='cpu'))
-    model_ft.eval() 
+    num_ftrs = model_ft.classifier[6].in_features
+    model_ft.classifier[6] = nn.Linear(num_ftrs,num_classes)
+
+    model_ft.load_state_dict(torch.load('AlexNet.pt', map_location='cpu'))
+    model_ft.eval()   
+
+    # model_ft = torch.hub.load('pytorch/vision:v0.6.0', 'resnet101', pretrained=True)
+    # model_ft.eval()
+    # num_ftrs = model_ft.fc.in_features
+    # model_ft.fc = nn.Linear(num_ftrs, 11)
+
+    # model_ft.load_state_dict(torch.load('ResNet101.pt', map_location='cpu'))
+    # model_ft.eval() 
 
     return model_ft
 
@@ -42,7 +44,8 @@ def getting_the_test_data():
         ]),
     }
 
-    data_dir = 'Paris'
+    # data_dir = 'Paris'
+    data_dir = 'Oxford'
 
     image_datasets = {x: datasets.ImageFolder(os.path.join(data_dir, x),
                                             data_transforms[x])
@@ -70,7 +73,7 @@ def getting_predictions(dataloaders_test, model_ft):
 def computing_accuracy(inputs_list, labels_list, class_names, Total_size):
     accuracies = {}
     acc_total = 0
-    for i in range(11):
+    for i in range(num_classes):
         labels_index = np.where(labels_list == i)[0]
         acc = 0
         for j in labels_index:

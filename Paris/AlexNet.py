@@ -14,7 +14,7 @@ model.eval()
 def defining_model_to_train():
 
     feature_extract = True
-    num_classes = 11
+    num_classes = 12
 
     model_ft = models.alexnet(pretrained=True)
     num_ftrs = model_ft.classifier[6].in_features

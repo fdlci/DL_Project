@@ -25,7 +25,8 @@ def defining_data():
         ]),
     }
 
-    data_dir = 'Paris'
+    # data_dir = 'Paris'
+    data_dir = 'Oxford'
     image_datasets = {x: datasets.ImageFolder(os.path.join(data_dir, x),
                                             data_transforms[x])
                     for x in ['Training Set', 'Validation Set']}
@@ -146,9 +147,9 @@ def train_model(model, dataloaders, criterion, optimizer, scheduler, num_epochs=
     plt.figure()
     plt.plot(training_loss, 'b', label='Training Loss')
     plt.plot(validation_loss, 'r', label='Validation Loss')
-    plt.title('VGG16: Variations of the training and validation loss')
+    plt.title('ResNet101: Variations of the training and validation loss')
     plt.show()
-    plt.savefig('VGG16.png')
+    plt.savefig('ResNet101_Oxford.png')
 
     return model
 

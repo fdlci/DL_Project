@@ -8,7 +8,7 @@ from torch.optim import lr_scheduler
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 print(device)
 
-model = torch.hub.load('pytorch/vision:v0.6.0', 'resnet18', pretrained=True)
+model = torch.hub.load('pytorch/vision:v0.6.0', 'resnet101', pretrained=True)
 # or any of these variants
 # model = torch.hub.load('pytorch/vision:v0.6.0', 'resnet34', pretrained=True)
 # model = torch.hub.load('pytorch/vision:v0.6.0', 'resnet50', pretrained=True)
@@ -19,7 +19,7 @@ model.eval()
 def defining_model_to_train():
 
     feature_extract = True
-    num_classes = 11
+    num_classes = 12
 
     model_ft = models.resnet101(pretrained=True)
     set_parameter_requires_grad(model_ft, feature_extract)
