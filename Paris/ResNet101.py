@@ -8,7 +8,7 @@ from torch.optim import lr_scheduler
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 print(device)
 
-model = torch.hub.load('pytorch/vision:v0.6.0', 'resnet101', pretrained=True)
+model = torch.hub.load('pytorch/vision:v0.6.0', 'resnet50', pretrained=True)
 # or any of these variants
 # model = torch.hub.load('pytorch/vision:v0.6.0', 'resnet34', pretrained=True)
 # model = torch.hub.load('pytorch/vision:v0.6.0', 'resnet50', pretrained=True)
@@ -18,17 +18,29 @@ model.eval()
 
 def defining_model_to_train():
 
-    feature_extract = True
-    num_classes = 12
-
-    model_ft = models.resnet101(pretrained=True)
-    set_parameter_requires_grad(model_ft, feature_extract)
+    num_classes = 11
+    model_ft = models.resnet18(pretrained=True)
     num_ftrs = model_ft.fc.in_features
     model_ft.fc = nn.Linear(num_ftrs, num_classes)
 
-    model_ft = model_ft.to(device)
+    for name, child in model_ft.named_children():
+        for name2, params in child.named_parameters():
+            # print(name, name2)
+            pass
 
-    criterion = nn.CrossEntropyLoss()
+    for param in model.parameters():
+        params.requires_grad = True
+
+    ct = 0
+    for name, child in model_ft.named_children():
+        # ct += 1
+        # if ct < 4:
+        #     for name2, params in child.named_parameters():
+        #         params.requires_grad = False
+        for name2, params in child.named_parameters():
+                # print(name+name2)
+                if 'layer41' not in name+name2 and 'fc' not in name:
+                    params.requires_grad = False
 
     params_to_update = model_ft.parameters()
     print("Params to learn:")
@@ -42,6 +54,10 @@ def defining_model_to_train():
         for name,param in model_ft.named_parameters():
             if param.requires_grad == True:
                 print("\t",name)
+
+    model_ft = model_ft.to(device)
+
+    criterion = nn.CrossEntropyLoss()
 
     # Observe that all parameters are being optimized
     optimizer_ft = optim.SGD(model_ft.parameters(), lr=0.001, momentum=0.9)
