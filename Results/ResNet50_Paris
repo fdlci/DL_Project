@@ -1,0 +1,22 @@
+Params to learn:
+         layer4.0.conv1.weight
+         layer4.0.bn1.weight
+         layer4.0.bn1.bias
+         layer4.0.conv2.weight
+         layer4.0.bn2.weight
+         layer4.0.bn2.bias
+         layer4.0.downsample.0.weight
+         layer4.0.downsample.1.weight
+         layer4.0.downsample.1.bias
+         layer4.1.conv1.weight
+         layer4.1.bn1.weight
+         layer4.1.bn1.bias
+         layer4.1.conv2.weight
+         layer4.1.bn2.weight
+         layer4.1.bn2.bias
+         fc.weight
+         fc.bias
+{'Defense_Test': 0.7894736842105263, 'Eiffel_Test': 0.5714285714285714, 'Invalides_Test': 0.6666666666666666, 
+'Louvre_Test': 0.9259259259259259, 'MoulinRouge_Test': 0.4090909090909091, 'MuséeOrsay_Test': 0.7671232876712328, 
+'NotreDame_Test': 0.6363636363636364, 'Pantheon_Test': 0.7575757575757576, 'Pompidou_Test': 0.8409090909090909, 
+'SacreCoeur_Test': 0.7105263157894737, 'Triomphe_Test': 0.9285714285714286, 'Total': 0.7382413087934561}

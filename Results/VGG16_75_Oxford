@@ -1,0 +1,7 @@
+Paramaters to learn:
+         classifier.6.weight
+         classifier.6.bias
+{'All souls go': 0.7142857142857143, 'Ashmolean go': 0.5, 'Balliol go': 0.8, 'Bodleian go': 1.0, 
+'Christ Church go': 0.7142857142857143, 'Cornmarket go': 1.0, 'Hertford go': 0.2, 
+'Junk_25_test': 0.9791666666666666, 'Keble go': 1.0, 'Magdalen go': 1.0, 'Pitt Rivers go': 0.0, 
+'Radcliffe Camera go': 1.0, 'Total': 0.9261083743842364}
