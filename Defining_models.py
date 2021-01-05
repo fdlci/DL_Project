@@ -2,15 +2,22 @@ from Main import *
 from torchvision import models
 import torch.nn as nn
 
+"""Builds the models we are going to train by defining
+the layers we are going to train as we use pre-trained 
+models."""
+
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 print(device)
 
 def set_parameter_requires_grad(model, feature_extracting):
+    """Setting all parameters to require gradient False"""
     if feature_extracting:
         for param in model.parameters():
             param.requires_grad = False
 
 def parameters_to_learn(feature_extract, model_ft):
+    """Defining the parameters we want to fine-tune (last layer)"""
+
     print("Paramaters to learn:")
     if feature_extract:
         params_to_update = []
@@ -24,6 +31,7 @@ def parameters_to_learn(feature_extract, model_ft):
                 print("\t",name)
 
 def defining_model_to_train_ResNet(num_classes):
+    """Defining the ResNet model, fine-tuning the last two layers"""
 
     model_ft = models.resnet18(pretrained=True)
     num_ftrs = model_ft.fc.in_features
@@ -43,6 +51,7 @@ def defining_model_to_train_ResNet(num_classes):
     return model_ft
 
 def defining_model_to_train_VGG16(num_classes):
+    """Defining the VGG16 model, fine-tuning the last layer"""
 
     feature_extract=True
     model_ft = models.vgg16(pretrained=True)
@@ -57,6 +66,7 @@ def defining_model_to_train_VGG16(num_classes):
     return model_ft
 
 def defining_model_to_train_AlexNet(num_classes):
+    """Defining the AlexNet model, fine-tuning the last layer"""
 
     feature_extract = True
     model_ft = models.alexnet(pretrained=True)

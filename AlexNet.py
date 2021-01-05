@@ -1,30 +1,37 @@
 from Main import *
-from torchvision import models
 import torch.nn as nn
 import torch.optim as optim
 from torch.optim import lr_scheduler
 from Defining_models import defining_model_to_train_AlexNet
 
+"""Builds and trains the model"""
+
+# Defining the device
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-print(device)
+print('The model is training on: ' + str(device))
 
 def train_pre_trained_model_AlexNet(pre_trained_model):
+    """For a built model, trains the model"""
 
+    # Defining the loss
     criterion = nn.CrossEntropyLoss()
 
-    # Observe that all parameters are being optimized
+    # Optimizing all parameters
     optimizer_ft = optim.SGD(pre_trained_model.parameters(), lr=0.001, momentum=0.9)
 
     # Decay LR by a factor of 0.1 every 7 epochs
     exp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=7, gamma=0.1)
 
+    # Loading the data
     dataloaders = defining_data()[0]
 
+    # Training the model
     model_ft = train_model(pre_trained_model, dataloaders, criterion, optimizer_ft, exp_lr_scheduler)
 
     return model_ft
 
 def main_train_AlexNet(num_classes):
+    """Builds and trains the model"""
 
     #Defining the model
     model_ft = defining_model_to_train_AlexNet(num_classes)
@@ -40,4 +47,5 @@ def main_train_AlexNet(num_classes):
 num_classes = 12
 model_ft = main_train_AlexNet(num_classes)
 
+# Saving the model
 torch.save(model_ft.state_dict(),"AlexNet.pt")

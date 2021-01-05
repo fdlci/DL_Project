@@ -5,8 +5,11 @@ import numpy as np
 import os
 from Defining_models import defining_model_to_train_ResNet, defining_model_to_train_VGG16, defining_model_to_train_AlexNet
 
+"""Makes predictions on the test set loading the saved models"""
 
 def loading_saved_model(num_classes, model_chosen, model_name):
+    """Loads the saved model"""
+
     # Loading VGG16
     if model_chosen == 'VGG16':
         model = defining_model_to_train_VGG16(num_classes)
@@ -28,6 +31,7 @@ def loading_saved_model(num_classes, model_chosen, model_name):
     return model
 
 def getting_the_test_data():
+    """Gets the test data"""
 
     data_transforms = {'Test Set': transforms.Compose([
             transforms.Resize(256),
@@ -53,8 +57,11 @@ def getting_the_test_data():
     return dataloaders_test, class_names, Total_size
 
 def getting_predictions(dataloaders_test, model_ft):
+    """Predicts the class of every image of the test set"""
+
     inputs_list = []
     labels_list = []
+
     for inputs, labels in dataloaders_test['Test Set']:
         labels_list += labels.tolist()
         outputs = model_ft(inputs)
@@ -64,8 +71,11 @@ def getting_predictions(dataloaders_test, model_ft):
     return np.array(inputs_list), np.array(labels_list)
 
 def computing_accuracy(inputs_list, labels_list, class_names, Total_size):
+    """Computes the accuracy for every landmark and the overall accuracy"""
+
     accuracies = {}
     acc_total = 0
+
     for i in range(num_classes):
         labels_index = np.where(labels_list == i)[0]
         acc = 0
@@ -75,6 +85,7 @@ def computing_accuracy(inputs_list, labels_list, class_names, Total_size):
         acc_total += acc
         accuracies[class_names[i]] = acc/len(labels_index)
     accuracies['Total'] = acc_total/Total_size
+
     return accuracies
 
 def main(num_classes, model_chosen, model_name):
