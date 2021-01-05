@@ -45,10 +45,12 @@ def defining_data(data_dir):
 
     return dataloaders, image_datasets
 
-def train_model(model, device, dataloaders, criterion, optimizer, scheduler, num_epochs=50):
+def train_model(model, data_dir, dataloaders, criterion, optimizer, scheduler, num_epochs=50):
     """Proceeds with model training"""
 
-    image_datasets = defining_data()[1]
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+
+    image_datasets = defining_data(data_dir)[1]
 
     dataset_sizes = {x: len(image_datasets[x]) for x in ['Training Set', 'Validation Set']}
 

@@ -27,7 +27,7 @@ def train_pre_trained_model_VGG16(pre_trained_model, data_dir):
     dataloaders = defining_data(data_dir)[0]
 
     # Training the model
-    model_ft = train_model(pre_trained_model, data_dir, device, dataloaders, criterion, optimizer_ft, exp_lr_scheduler)
+    model_ft = train_model(pre_trained_model, data_dir, dataloaders, criterion, optimizer_ft, exp_lr_scheduler)
 
     return model_ft
 
