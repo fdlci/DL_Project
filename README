@@ -1,0 +1,18 @@
+Explanation of our work:
+
+Oxford folder: contains images from Oxford5k
+Paris folder: contains images from Paris6k
+
+        For more explanation on the datasets please refer to the project report
+
+Slurm_Request folder: folder containing slurm requests to run our code on a GPU
+Runs folder: Contains all the runs we made to train our models
+Results folder: Contains the results of accuracies for every trained model
+Images folder: Contains images of the training and validation loss
+
+Code:
+Defining_models.py: defines the model we will use and indicates the layers to fine-tune
+Main.py: Loads the training and validation datasets, contains the training function
+AlexNet.py: Implementation of AlexNet
+ResNet50.py: Implementation of ResNet50
+VGG16.py: Implementation of VGG16
