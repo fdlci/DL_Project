@@ -5,7 +5,7 @@ import os
 from Defining_models import defining_model_to_train_ResNet, defining_model_to_train_VGG16, defining_model_to_train_AlexNet
 from Main import number_of_classes
 
-"""Makes predictions on the test set loading the saved models"""
+"""Makes predictions on the test set loading the saved models"""  
 
 def loading_saved_model(num_classes, model_chosen, model_name):
     """Loads the saved model"""
