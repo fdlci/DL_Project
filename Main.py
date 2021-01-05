@@ -10,7 +10,15 @@ plt.ion()
 """Loads the training and validation sets.
 Trains the network"""
 
-def defining_data():
+def number_of_classes(data_dir):
+    """Returns the number of classes"""
+    if data_dir == 'Paris':
+        num_classes = 11
+    elif data_dir == 'Oxford':
+        num_classes = 12
+    return num_classes
+
+def defining_data(data_dir):
     """Loads the training set and validation set"""
 
     data_transforms = {
@@ -28,8 +36,6 @@ def defining_data():
         ]),
     }
 
-    data_dir = 'Paris'
-    # data_dir = 'Oxford'
     image_datasets = {x: datasets.ImageFolder(os.path.join(data_dir, x),
                                             data_transforms[x])
                     for x in ['Training Set', 'Validation Set']}
@@ -39,15 +45,12 @@ def defining_data():
 
     return dataloaders, image_datasets
 
-def train_model(model, dataloaders, criterion, optimizer, scheduler, num_epochs=50):
+def train_model(model, device, dataloaders, criterion, optimizer, scheduler, num_epochs=50):
     """Proceeds with model training"""
-
-    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
     image_datasets = defining_data()[1]
 
     dataset_sizes = {x: len(image_datasets[x]) for x in ['Training Set', 'Validation Set']}
-    class_names = image_datasets['Training Set'].classes
 
     since = time.time()
 

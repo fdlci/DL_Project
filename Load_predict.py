@@ -1,9 +1,9 @@
 import torch
-import torch.nn as nn
 from torchvision import datasets, transforms
 import numpy as np
 import os
 from Defining_models import defining_model_to_train_ResNet, defining_model_to_train_VGG16, defining_model_to_train_AlexNet
+from Main import number_of_classes
 
 """Makes predictions on the test set loading the saved models"""
 
@@ -30,7 +30,7 @@ def loading_saved_model(num_classes, model_chosen, model_name):
 
     return model
 
-def getting_the_test_data():
+def getting_the_test_data(data_dir):
     """Gets the test data"""
 
     data_transforms = {'Test Set': transforms.Compose([
@@ -40,9 +40,6 @@ def getting_the_test_data():
             transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
         ]),
     }
-
-    data_dir = 'Paris'
-    # data_dir = 'Oxford'
 
     image_datasets = {x: datasets.ImageFolder(os.path.join(data_dir, x),
                                             data_transforms[x])
@@ -70,7 +67,7 @@ def getting_predictions(dataloaders_test, model_ft):
 
     return np.array(inputs_list), np.array(labels_list)
 
-def computing_accuracy(inputs_list, labels_list, class_names, Total_size):
+def computing_accuracy(inputs_list, labels_list, class_names, Total_size, num_classes):
     """Computes the accuracy for every landmark and the overall accuracy"""
 
     accuracies = {}
@@ -88,32 +85,37 @@ def computing_accuracy(inputs_list, labels_list, class_names, Total_size):
 
     return accuracies
 
-def main(num_classes, model_chosen, model_name):
+def main(data_dir, model_chosen, model_name):
+
+    # Number of classes
+    num_classes = number_of_classes(data_dir)
 
     # Loading the model
     model_ft = loading_saved_model(num_classes, model_chosen, model_name)
 
     # Getting the data
-    dataloaders_test, class_names, Total_size = getting_the_test_data()
+    dataloaders_test, class_names, Total_size = getting_the_test_data(data_dir)
 
     # Pridicting landmarks
     inputs_list, labels_list = getting_predictions(dataloaders_test, model_ft)
 
     # Computing the accuracy
-    accuracy = computing_accuracy(inputs_list, labels_list, class_names, Total_size)
+    accuracy = computing_accuracy(inputs_list, labels_list, class_names, Total_size, num_classes)
 
     return accuracy
 
 
-num_classes = 11
-# model_chosen = 'VGG16'
-# model_name = 'Models/VGG16_75_Oxford.pt'
+# data_dir = 'Paris'
+data_dir = 'Oxford'
+
+model_chosen = 'VGG16'
+model_name = 'Models/VGG16_75_Oxford.pt'
 
 # model_chosen = 'ResNet'
-# model_name = 'ResNet50_Paris.pt'
+# model_name = 'Models/ResNet50_Paris.pt'
 
-model_chosen = 'AlexNet'
-model_name = 'Models/AlexNet_Paris.pt'
+# model_chosen = 'AlexNet'
+# model_name = 'Models/AlexNet_Paris.pt'
 
-accuracy = main(num_classes, model_chosen, model_name)
+accuracy = main(data_dir, model_chosen, model_name)
 print(accuracy)
