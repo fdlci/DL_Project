@@ -41,7 +41,7 @@ def main_train_ResNet(data_dir):
     model_ft = defining_model_to_train_ResNet(num_classes)
 
     # Training Model
-    model_trained = train_pre_trained_model_ResNet(model_ft)
+    model_trained = train_pre_trained_model_ResNet(model_ft, data_dir)
 
     return model_trained
 

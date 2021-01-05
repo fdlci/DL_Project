@@ -41,7 +41,7 @@ def main_train_AlexNet(data_dir):
     model_ft = defining_model_to_train_AlexNet(num_classes)
 
     #Training the model
-    model_trained = train_pre_trained_model_AlexNet(model_ft)
+    model_trained = train_pre_trained_model_AlexNet(model_ft, data_dir)
 
     return model_trained
 
